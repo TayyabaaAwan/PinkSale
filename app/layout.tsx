@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "./globals.css";
 import Link from "next/link";
 
@@ -34,13 +35,40 @@ export default function RootLayout({
             <br />
             <Link href="/about">About</Link>
           </div>
-          <nav className="navbar navbar-dark fixed-top bg-dark">
+
+
+<div className="navbar">
+          <nav className="navbar navbar-dark fixed-top bg-white" style={{ paddingRight: "50px",  paddingLeft: "50px" }}> 
+          {/* navbar-dark fixed-top bg-light */}
+            <div className="namelogo">
+    <a className="navbar-brand" href="#">
+      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '40px', width: '40px' }}  />
+      <span style={{ color: "black" }}>   PinkSale</span>
+    </a></div>
+          <div className="buttons d-flex align-items-center"> 
+    
+          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#f3f3f4", color: "black" }}><i className="bi bi-graph-up"></i>   dexview.com</button>
+          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#f3f3f4", color: "black" }}><img 
+          src="./images/bsc.png"
+          alt="Icon"
+          style={{ height: '20px', width: '20px' }}  
+        />  BSC MAINNET</button>
+          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#fdeaf1", color: "#f95997" }}>Connect</button>
+
+          {/* <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>dexview.com</span></a>
+          <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>BSC Mainnet</span></a>
+          <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>Connect</span></a> */} 
+          </div>  
+         </nav></div> 
+
+          {/* <nav className="navbar navbar-dark fixed-top bg-dark">
             <div className="container-fluid">
               <a className="navbar-brand" href="#">
                 Default
               </a>
             </div>
-          </nav>
+          </nav> */}
+    
           <div className="d-flex">
             <div
               className=""
