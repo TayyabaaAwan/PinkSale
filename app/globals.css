@@ -17,6 +17,7 @@
     #0071ff33 160deg,
     transparent 360deg
   );
+  
   --secondary-glow: radial-gradient(
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
@@ -99,7 +100,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.hover-text {
+  color: black; /* Initial color */
+  transition: color 0.2s ease-in-out; /* Smooth transition */
+}
 
+.hover-text:hover {
+  color: blue; /* Hover color */
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

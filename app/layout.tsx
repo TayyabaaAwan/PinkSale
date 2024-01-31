@@ -1,10 +1,138 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import React from 'react';
+//import 'react-pro-sidebar/dist/css/styles.css';
+// import Sidebar from 'react-pro-sidebar'; 
+// import { Sidebar, SidebarContext,  Menu, SubMenu, MenuItem} from "react-pro-sidebar";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
+//import { HomeOutlined } from '@ant-design/icons';
 import "./globals.css";
+//import * as Icons from '@ant-design/icons';
+
+import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import * as Icons from '@ant-design/icons';
+//import { HomeOutlined,  DollarTwoTone, DatabaseFilled, UnlockOutlined, RocketOutlined, BranchesOutlined, CrownOutlined,SafetyCertificateTwoTone, LineChartOutlined, RobotOutlined,ShoppingCartOutlined, TwitterOutlined, FacebookOutlined} from '@ant-design/icons';
+import "./page.module.css";
 import Link from "next/link";
+//import { Sidebar } from 'flowbite-react';
+//import { Sidebar } from 'flowbite-react';
+//import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
+// import {
+//   Drawer,
+//   List,
+//   ListItem,
+//   ListItemIcon,
+//   ListItemText,
+//   Divider,
+//   IconButton,
+// } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const inter = Inter({ subsets: ["latin"] });
+// const items = [
+
+const items = [
+  {
+    text: 'Home',
+    icon: 'home',
+  },
+  {
+    text: 'Home',
+    icon:  'bi bi-house-door',
+    //<HomeOutlined />, 
+  },
+  {
+    text: 'Launchpads',
+    icon: 'bi bi-rocket',
+    //<RocketOutlined />,
+    subitems: [
+      { text: 'Create Launchpad' },
+      { text: 'Create fair launch' },
+    ],
+  },
+  {
+    text: 'PinkLock',
+    icon: 'bi bi-lock',
+    // <UnlockOutlined />, 
+  },
+  {
+    text: 'AirDrop',
+    icon: 'bi bi-balloon',
+  },
+  {
+    text: 'Staking',
+    icon: 'bi bi-cash-stack',
+    //<DatabaseFilled />,
+  },
+  {
+    text: 'Private Sale',
+    icon: 'bi bi-shield',
+    //  <PropertySafetyFilled />,
+  },
+  {
+    text: 'Buy Crypto Fiat',
+    icon: 'bi bi-coin',
+    // <DollarTwoTone />,
+  },
+  {
+    text: 'Bridge',
+    icon: 'bi bi-git',
+    //<BranchesOutlined />,
+  },
+  {
+    text: 'Leaderboard',
+    icon: 'bi bi-trophy',
+    //<CrownOutlined />,
+  },
+  {
+    text: 'Anti-Bot',
+    icon: 'bi bi-shield-check', 
+    //<SafetyCertificateTwoTone />, 
+  },
+  {
+    text: 'Multi-Sender',
+    icon: 'bi bi-arrow-right-square',
+  },
+  {
+    text: 'dexview.com',
+    icon: 'bi bi-graph-up',
+    //<LineChartOutlined />,
+  },
+  {
+    text: 'Pools Alert',
+    icon: 'bi bi-robot',
+    //<RobotOutlined />, 
+  },
+  {
+    text: 'KYC & Audit',
+    icon: 'bi bi-file-earmark-check',
+  },
+  {
+    text: 'Docs',
+    icon: 'bi bi-file-earmark-text',
+  },
+  {
+    text: 'Shop',
+    icon: 'bi bi-cart3',
+    //<ShoppingCartOutlined />,
+  },
+  {
+    text: 'Telegram',
+    icon: 'bi bi-telegram',
+  },
+  {
+    text: 'Twitter',
+    icon: 'bi bi-twitter',
+    // <TwitterOutlined />, 
+  },
+  {
+    text: 'Facebook',
+    icon: 'bi bi-facebook',
+    //<FacebookOutlined />,
+  },
+];
+
+// const [open, setOpen] = useState("opened");
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,11 +143,21 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) 
+{
+  // .hover-text {
+  //   color: black; /* Initial color */
+  //   transition: color 0.2s ease-in-out; /* Smooth transition */
+  // }
+  // .hover-text:hover {
+  //   color: blue; /* Hover color */
+  // }
   return (
+
     <html lang="en">
       <body className={inter.className}>
-        <div className="wrap" style={{ paddingLeft: "275px" }}>
+        <div className="wrap" style={{ paddingLeft: "275px", fontFamily: '-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji' }}>
+      
           <div
             className="sidebar bg-white"
             style={{
@@ -27,22 +165,52 @@ export default function RootLayout({
               width: "275px",
               top: "0",
               left: "0",
-              height: "100vh",
+              height: "calc(100vh - 100px)",
               paddingTop: "75px",
+              color: "pink",
             }}
           >
-            <Link href="/">Home</Link>
+          {/* <span className="font-bold text-lg hover:text-pink">
+        </span> */}
+
+            {/* <Sidebar>
+            <h1>Hello</h1>
+            </Sidebar> */}
+          
+      <Drawer
+      variant="permanent"
+      anchor="left"
+      open
+      >
+      
+      <List>
+        {items.map((item) => (
+          <ListItem button key={item.text}> 
+             <ListItemIcon>    
+      <i className={item.icon}></i>
+    </ListItemIcon>
+            <ListItemText primary={item.text} />
+          </ListItem>
+        ))}
+        <Divider />
+      </List>
+      <div className="sidebar-footer"style={{ color: "#f95192" ,  display: 'flex'}}>
+      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '20px', width: '20px'}}  /><h5>PINKSALE</h5><span style={{ width: '20px' }}></span> 
+      <p style={{ color: "black", textAlign: "right",  fontWeight: "bold"}}>$187.86</p> 
+    </div>
+    </Drawer></div>
+  
+            {/* <Link href="/">Home</Link>
             <br />
-            <Link href="/about">About</Link>
-          </div>
+            <Link href="/about">About</Link> */}
+          
 
 
-<div className="navbar">
+<div className="navbar" >
           <nav className="navbar navbar-dark fixed-top bg-white" style={{ paddingRight: "50px",  paddingLeft: "50px" }}> 
-          {/* navbar-dark fixed-top bg-light */}
             <div className="namelogo">
-    <a className="navbar-brand" href="#">
-      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '40px', width: '40px' }}  />
+    <a className="navbar-brand" href="#"><i className="bi bi-blockquote-left" style={{ color: 'black', padding: '10px', fontSize: '24px' }}></i>
+      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '40px', width: '40px'}}  />
       <span style={{ color: "black" }}>   PinkSale</span>
     </a></div>
           <div className="buttons d-flex align-items-center"> 
@@ -54,12 +222,52 @@ export default function RootLayout({
           style={{ height: '20px', width: '20px' }}  
         />  BSC MAINNET</button>
           <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#fdeaf1", color: "#f95997" }}>Connect</button>
-
-          {/* <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>dexview.com</span></a>
-          <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>BSC Mainnet</span></a>
-          <a className="nav-link mx-2" href="/"><span style={{ color: "black" }}>Connect</span></a> */} 
           </div>  
          </nav></div> 
+
+         
+         <div className='trendingBar' style={{  color:'black', width: '100%', marginTop: '4px', borderBottom: 'solid 1px', borderColor: "#d3d3d3", paddingTop: "50px", paddingLeft: "0px", gap: '7px', display: 'flex', gridTemplateColumns: "repeat(4, 1fr)" }}>
+         <section style={{ display: 'flex', alignItems : 'center' }}>
+         <h6> <i className="bi bi-graph-up-arrow" style={{ color: "#f95192" }}></i>  Trending</h6>
+      <ul style={{ color: "#f95192" }}>
+      #1 MYRO2.0
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #2 CHARIZARD 
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #3 SMILEY
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #4 $OMNI 
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #5 CBAI
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #6 VENOM AI
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #7 TIF
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #8 POPEYE
+      </ul>
+      <ul style={{ color: "#f95192" }}>
+      #9 TENC
+      </ul>
+      {/* <ul style={{ color: "#f95192" }}>
+      #10 TENC
+      </ul> */}
+      {/* <h5>Trending</h5> <br/><div className="element  mx-1" style={{ color: "#f95192" }}>#1 MYRO2.0</div> */}
+      {/* <div className="trendingCoins d-flex align-items-center"> 
+      <div className="element  mx-1" style={{ color: "#f95192" }}>#1 MYRO2.0</div> */}
+
+
+    </section></div>
+  
+
+         
 
           {/* <nav className="navbar navbar-dark fixed-top bg-dark">
             <div className="container-fluid">
