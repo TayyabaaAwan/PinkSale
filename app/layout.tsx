@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import React from 'react';
+import React from "react";
 //import 'react-pro-sidebar/dist/css/styles.css';
-// import Sidebar from 'react-pro-sidebar'; 
+// import Sidebar from 'react-pro-sidebar';
 // import { Sidebar, SidebarContext,  Menu, SubMenu, MenuItem} from "react-pro-sidebar";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 //import { HomeOutlined } from '@ant-design/icons';
 import "./globals.css";
 //import * as Icons from '@ant-design/icons';
 
-import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import * as Icons from '@ant-design/icons';
+import {
+  Drawer,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import * as Icons from "@ant-design/icons";
 //import { HomeOutlined,  DollarTwoTone, DatabaseFilled, UnlockOutlined, RocketOutlined, BranchesOutlined, CrownOutlined,SafetyCertificateTwoTone, LineChartOutlined, RobotOutlined,ShoppingCartOutlined, TwitterOutlined, FacebookOutlined} from '@ant-design/icons';
 import "./page.module.css";
 import Link from "next/link";
@@ -26,108 +33,105 @@ import Link from "next/link";
 //   Divider,
 //   IconButton,
 // } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
 // const items = [
 
 const items = [
   {
-    text: 'Home',
-    icon: 'home',
+    text: "Home",
+    icon: "home",
   },
   {
-    text: 'Home',
-    icon:  'bi bi-house-door',
-    //<HomeOutlined />, 
+    text: "Home",
+    icon: "bi bi-house-door",
+    //<HomeOutlined />,
   },
   {
-    text: 'Launchpads',
-    icon: 'bi bi-rocket',
+    text: "Launchpads",
+    icon: "bi bi-rocket",
     //<RocketOutlined />,
-    subitems: [
-      { text: 'Create Launchpad' },
-      { text: 'Create fair launch' },
-    ],
+    subitems: [{ text: "Create Launchpad" }, { text: "Create fair launch" }],
   },
   {
-    text: 'PinkLock',
-    icon: 'bi bi-lock',
-    // <UnlockOutlined />, 
+    text: "PinkLock",
+    icon: "bi bi-lock",
+    // <UnlockOutlined />,
   },
   {
-    text: 'AirDrop',
-    icon: 'bi bi-balloon',
+    text: "AirDrop",
+    icon: "bi bi-balloon",
   },
   {
-    text: 'Staking',
-    icon: 'bi bi-cash-stack',
+    text: "Staking",
+    icon: "bi bi-cash-stack",
     //<DatabaseFilled />,
   },
   {
-    text: 'Private Sale',
-    icon: 'bi bi-shield',
+    text: "Private Sale",
+    icon: "bi bi-shield",
     //  <PropertySafetyFilled />,
   },
   {
-    text: 'Buy Crypto Fiat',
-    icon: 'bi bi-coin',
+    text: "Buy Crypto Fiat",
+    icon: "bi bi-coin",
     // <DollarTwoTone />,
   },
   {
-    text: 'Bridge',
-    icon: 'bi bi-git',
+    text: "Bridge",
+    icon: "bi bi-git",
     //<BranchesOutlined />,
   },
   {
-    text: 'Leaderboard',
-    icon: 'bi bi-trophy',
+    text: "Leaderboard",
+    icon: "bi bi-trophy",
     //<CrownOutlined />,
   },
   {
-    text: 'Anti-Bot',
-    icon: 'bi bi-shield-check', 
-    //<SafetyCertificateTwoTone />, 
+    text: "Anti-Bot",
+    icon: "bi bi-shield-check",
+    //<SafetyCertificateTwoTone />,
   },
   {
-    text: 'Multi-Sender',
-    icon: 'bi bi-arrow-right-square',
+    text: "Multi-Sender",
+    icon: "bi bi-arrow-right-square",
   },
   {
-    text: 'dexview.com',
-    icon: 'bi bi-graph-up',
+    text: "dexview.com",
+    icon: "bi bi-graph-up",
     //<LineChartOutlined />,
   },
   {
-    text: 'Pools Alert',
-    icon: 'bi bi-robot',
-    //<RobotOutlined />, 
+    text: "Pools Alert",
+    icon: "bi bi-robot",
+    //<RobotOutlined />,
   },
   {
-    text: 'KYC & Audit',
-    icon: 'bi bi-file-earmark-check',
+    text: "KYC & Audit",
+    icon: "bi bi-file-earmark-check",
   },
   {
-    text: 'Docs',
-    icon: 'bi bi-file-earmark-text',
+    text: "Docs",
+    icon: "bi bi-file-earmark-text",
   },
   {
-    text: 'Shop',
-    icon: 'bi bi-cart3',
+    text: "Shop",
+    icon: "bi bi-cart3",
     //<ShoppingCartOutlined />,
   },
   {
-    text: 'Telegram',
-    icon: 'bi bi-telegram',
+    text: "Telegram",
+    icon: "bi bi-telegram",
   },
   {
-    text: 'Twitter',
-    icon: 'bi bi-twitter',
-    // <TwitterOutlined />, 
+    text: "Twitter",
+    icon: "bi bi-twitter",
+    // <TwitterOutlined />,
   },
   {
-    text: 'Facebook',
-    icon: 'bi bi-facebook',
+    text: "Facebook",
+    icon: "bi bi-facebook",
     //<FacebookOutlined />,
   },
 ];
@@ -143,8 +147,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) 
-{
+}) {
   // .hover-text {
   //   color: black; /* Initial color */
   //   transition: color 0.2s ease-in-out; /* Smooth transition */
@@ -153,16 +156,22 @@ export default function RootLayout({
   //   color: blue; /* Hover color */
   // }
   return (
-
     <html lang="en">
       <body className={inter.className}>
-        <div className="wrap" style={{ paddingLeft: "275px", fontFamily: '-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji' }}>
-      
+        <div
+          className="wrap"
+          style={{
+            // paddingLeft: "275px",
+            paddingLeft: "215px",
+            fontFamily:
+              "-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji",
+          }}
+        >
           <div
             className="sidebar bg-white"
             style={{
               position: "fixed",
-              width: "275px",
+              // width: "275px",
               top: "0",
               left: "0",
               height: "calc(100vh - 100px)",
@@ -170,119 +179,107 @@ export default function RootLayout({
               color: "pink",
             }}
           >
-          {/* <span className="font-bold text-lg hover:text-pink">
+            {/* <span className="font-bold text-lg hover:text-pink">
         </span> */}
 
             {/* <Sidebar>
             <h1>Hello</h1>
             </Sidebar> */}
-          
-      <Drawer
-      variant="permanent"
-      anchor="left"
-      open
-      >
-      
-      <List>
-        {items.map((item) => (
-          <ListItem button key={item.text}> 
-             <ListItemIcon>    
-      <i className={item.icon}></i>
-    </ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
-        <Divider />
-      </List>
-      <div className="sidebar-footer"style={{ color: "#f95192" ,  display: 'flex'}}>
-      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '20px', width: '20px'}}  /><h5>PINKSALE</h5><span style={{ width: '20px' }}></span> 
-      <p style={{ color: "black", textAlign: "right",  fontWeight: "bold"}}>$187.86</p> 
-    </div>
-    </Drawer></div>
-  
-            {/* <Link href="/">Home</Link>
-            <br />
-            <Link href="/about">About</Link> */}
-          
 
+            <Drawer variant="permanent" anchor="left" open>
+              <List>
+                {items.map((item) => (
+                  <ListItem button key={item.text}>
+                    <ListItemIcon>
+                      <i className={item.icon}></i>
+                    </ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                ))}
+                <Divider />
+              </List>
+              <div
+                className="sidebar-footer"
+                style={{ color: "#f95192", display: "flex" }}
+              >
+                <img
+                  className="img-fluid"
+                  src="./images/pinkSale.png"
+                  alt="logo"
+                  style={{ height: "20px", width: "20px" }}
+                />
+                <h5>PINKSALE</h5>
+                <span style={{ width: "20px" }}></span>
+                <p
+                  style={{
+                    color: "black",
+                    textAlign: "right",
+                    fontWeight: "bold",
+                  }}
+                >
+                  $187.86
+                </p>
+              </div>
+            </Drawer>
+          </div>
 
-<div className="navbar" >
-          <nav className="navbar navbar-dark fixed-top bg-white" style={{ paddingRight: "50px",  paddingLeft: "50px" }}> 
-            <div className="namelogo">
-    <a className="navbar-brand" href="#"><i className="bi bi-blockquote-left" style={{ color: 'black', padding: '10px', fontSize: '24px' }}></i>
-      <img className="img-fluid" src="./images/pinkSale.png" alt="logo" style={{ height: '40px', width: '40px'}}  />
-      <span style={{ color: "black" }}>   PinkSale</span>
-    </a></div>
-          <div className="buttons d-flex align-items-center"> 
-    
-          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#f3f3f4", color: "black" }}><i className="bi bi-graph-up"></i>   dexview.com</button>
-          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#f3f3f4", color: "black" }}><img 
-          src="./images/bsc.png"
-          alt="Icon"
-          style={{ height: '20px', width: '20px' }}  
-        />  BSC MAINNET</button>
-          <button type="button" className="btn rounded-pill  mx-1"style={{ backgroundColor: "#fdeaf1", color: "#f95997" }}>Connect</button>
-          </div>  
-         </nav></div> 
-
-         
-         <div className='trendingBar' style={{  color:'black', width: '100%', marginTop: '4px', borderBottom: 'solid 1px', borderColor: "#d3d3d3", paddingTop: "50px", paddingLeft: "0px", gap: '7px', display: 'flex', gridTemplateColumns: "repeat(4, 1fr)" }}>
-         <section style={{ display: 'flex', alignItems : 'center' }}>
-         <h6> <i className="bi bi-graph-up-arrow" style={{ color: "#f95192" }}></i>  Trending</h6>
-      <ul style={{ color: "#f95192" }}>
-      #1 MYRO2.0
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #2 CHARIZARD 
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #3 SMILEY
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #4 $OMNI 
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #5 CBAI
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #6 VENOM AI
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #7 TIF
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #8 POPEYE
-      </ul>
-      <ul style={{ color: "#f95192" }}>
-      #9 TENC
-      </ul>
-      {/* <ul style={{ color: "#f95192" }}>
-      #10 TENC
-      </ul> */}
-      {/* <h5>Trending</h5> <br/><div className="element  mx-1" style={{ color: "#f95192" }}>#1 MYRO2.0</div> */}
-      {/* <div className="trendingCoins d-flex align-items-center"> 
-      <div className="element  mx-1" style={{ color: "#f95192" }}>#1 MYRO2.0</div> */}
-
-
-    </section></div>
-  
-
-         
-
-          {/* <nav className="navbar navbar-dark fixed-top bg-dark">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="#">
-                Default
-              </a>
-            </div>
-          </nav> */}
-    
-          <div className="d-flex">
+          <div className="navbar">
+            <nav className="navbar navbar-dark fixed-top bg-white">
+              <div className="namelogo">
+                <a className="navbar-brand" href="#">
+                  <i
+                    className="bi bi-blockquote-left"
+                    style={{
+                      color: "black",
+                      padding: "10px",
+                      fontSize: "24px",
+                    }}
+                  ></i>
+                  <img
+                    className="img-fluid"
+                    src="./images/pinkSale.png"
+                    alt="logo"
+                    style={{ height: "40px", width: "40px" }}
+                  />
+                  <span style={{ color: "black" }}> PinkSale</span>
+                </a>
+              </div>
+              <div className="buttons d-flex align-items-center">
+                <button
+                  type="button"
+                  className="btn rounded-pill  mx-1"
+                  style={{ backgroundColor: "#f3f3f4", color: "black" }}
+                >
+                  <i className="bi bi-graph-up"></i> dexview.com
+                </button>
+                <button
+                  type="button"
+                  className="btn rounded-pill  mx-1"
+                  style={{ backgroundColor: "#f3f3f4", color: "black" }}
+                >
+                  <img
+                    src="./images/bsc.png"
+                    alt="Icon"
+                    style={{ height: "20px", width: "20px" }}
+                  />{" "}
+                  BSC MAINNET
+                </button>
+                <button
+                  type="button"
+                  className="btn rounded-pill  mx-1"
+                  style={{ backgroundColor: "#fdeaf1", color: "#f95997" }}
+                >
+                  Connect
+                </button>
+              </div>
+            </nav>
+          </div>
+          <div className="">
             <div
               className=""
               style={{
                 // height: "calc(100vh - 80px)",
-                backgroundColor: "#fff",
+                // backgroundColor: "#fff",
                 color: "black",
               }}
             ></div>

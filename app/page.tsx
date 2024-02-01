@@ -1,32 +1,64 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-//import { Button } from "react-bootstrap";
-import { Grid, Button, Card, CardContent, CardMedia, CardActions, Typography } from '@mui/material';
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import pinkswap from "../app/img/pinkswap.png";
+import LaunchPads from "./Component/LaunchPads";
 export default function Home() {
+  const cardBlocks = [
+    {
+      title: "Baby Snow",
+      value: "1 BNB = 2,200,000 CR7INU ",
+    },
+    {
+      title: "Baby Snow",
+      value: "1 BNB = 2,200,000 CR7INU ",
+    },
+    {
+      title: "Baby Snow",
+      value: "1 BNB = 2,200,000 CR7INU ",
+    },
+    {
+      title: "Baby Snow",
+      value: "1 BNB = 2,200,000 CR7INU ",
+    },
+  ];
+
   return (
-    <div style={{ overflowY: "scroll"}}>
-      <div>
-  {/* <Sidebar>
-            <h1>Hello</h1>
-            </Sidebar> */}
+    <div className="col-md-12">
+      <div
+      // className="trendingBar"
+      // style={{
+      //   color: "black",
+      //   width: "100%",
+      //   marginTop: "4px",
+      //   borderBottom: "solid 1px",
+      //   borderColor: "#d3d3d3",
+      //   paddingTop: "50px",
+      //   paddingLeft: "0px",
+      //   gap: "7px",
+      //   display: "flex",
+      //   gridTemplateColumns: "repeat(4, 1fr)",
+      // }}
+      >
+        <section style={{ display: "flex", alignItems: "center" }}>
+          <h6>
+            {" "}
+            <i
+              className="bi bi-graph-up-arrow"
+              style={{ color: "#f95192" }}
+            ></i>{" "}
+            Trending
+          </h6>
+          {/* <ul style={{ color: "#f95192" }}>#1 MYRO2.0</ul>
+          <ul style={{ color: "#f95192" }}>#2 CHARIZARD</ul>
+          <ul style={{ color: "#f95192" }}>#3 SMILEY</ul>
+          <ul style={{ color: "#f95192" }}>#4 $OMNI</ul>
+          <ul style={{ color: "#f95192" }}>#5 CBAI</ul>
+          <ul style={{ color: "#f95192" }}>#6 VENOM AI</ul>
+          <ul style={{ color: "#f95192" }}>#7 TIF</ul>
+          <ul style={{ color: "#f95192" }}>#8 POPEYE</ul>
+          <ul style={{ color: "#f95192" }}>#9 TENC</ul> */}
+        </section>
       </div>
-      <h1 style={{ fontSize: "150px"}}>this is col set</h1>
-      <div className="hover-text">
-      This text will change color on hover!
-    </div>
-      {/* <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1>
-      <h1 style={{ fontSize: "150px" }}>this is col set</h1> */}
+      <LaunchPads />{" "}
     </div>
   );
 }
