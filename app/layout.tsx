@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
-//import 'react-pro-sidebar/dist/css/styles.css';
-// import Sidebar from 'react-pro-sidebar';
-// import { Sidebar, SidebarContext,  Menu, SubMenu, MenuItem} from "react-pro-sidebar";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
-//import { HomeOutlined } from '@ant-design/icons';
 import "./globals.css";
 //import * as Icons from '@ant-design/icons';
 
@@ -18,25 +14,12 @@ import {
   ListItemText,
 } from "@mui/material";
 import * as Icons from "@ant-design/icons";
-//import { HomeOutlined,  DollarTwoTone, DatabaseFilled, UnlockOutlined, RocketOutlined, BranchesOutlined, CrownOutlined,SafetyCertificateTwoTone, LineChartOutlined, RobotOutlined,ShoppingCartOutlined, TwitterOutlined, FacebookOutlined} from '@ant-design/icons';
 import "./page.module.css";
 import Link from "next/link";
-//import { Sidebar } from 'flowbite-react';
-//import { Sidebar } from 'flowbite-react';
-//import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
-// import {
-//   Drawer,
-//   List,
-//   ListItem,
-//   ListItemIcon,
-//   ListItemText,
-//   Divider,
-//   IconButton,
-// } from '@mui/material';
+
 import MenuIcon from "@mui/icons-material/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
-// const items = [
 
 const items = [
   {
@@ -148,20 +131,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // .hover-text {
-  //   color: black; /* Initial color */
-  //   transition: color 0.2s ease-in-out; /* Smooth transition */
-  // }
-  // .hover-text:hover {
-  //   color: blue; /* Hover color */
-  // }
+ 
   return (
     <html lang="en">
       <body className={inter.className}>
         <div
           className="wrap"
           style={{
-            // paddingLeft: "275px",
             paddingLeft: "215px",
             fontFamily:
               "-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji",
@@ -171,7 +147,6 @@ export default function RootLayout({
             className="sidebar bg-white"
             style={{
               position: "fixed",
-              // width: "275px",
               top: "0",
               left: "0",
               height: "calc(100vh - 100px)",
@@ -179,12 +154,6 @@ export default function RootLayout({
               color: "pink",
             }}
           >
-            {/* <span className="font-bold text-lg hover:text-pink">
-        </span> */}
-
-            {/* <Sidebar>
-            <h1>Hello</h1>
-            </Sidebar> */}
 
             <Drawer variant="permanent" anchor="left" open>
               <List>
@@ -278,8 +247,6 @@ export default function RootLayout({
             <div
               className=""
               style={{
-                // height: "calc(100vh - 80px)",
-                // backgroundColor: "#fff",
                 color: "black",
               }}
             ></div>

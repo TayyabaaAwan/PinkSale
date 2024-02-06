@@ -47,6 +47,7 @@ export default function Home() {
             ></i>{" "}
             Trending
           </h6>
+          
           {/* <ul style={{ color: "#f95192" }}>#1 MYRO2.0</ul>
           <ul style={{ color: "#f95192" }}>#2 CHARIZARD</ul>
           <ul style={{ color: "#f95192" }}>#3 SMILEY</ul>
