@@ -1,12 +1,23 @@
+
+
+
 .card-body {
   background-color: #fff;
-  border: #ffdd57;
+  border: #E45706;
   padding: 1rem 1.5rem;
   width: 100%;
   border-radius: 2.375rem !important;
-  border: 1.5px solid yellow;
+  border: 1.5px solid #E45706;
 }
 .card {
   border-radius: 2.375rem !important;
   border: none !important;
+}
+
+#navbar {
+  background-color: #fff; 
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  transition: top 0.3s;
 }

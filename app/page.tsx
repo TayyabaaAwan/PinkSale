@@ -38,7 +38,7 @@ export default function Home() {
       //   gridTemplateColumns: "repeat(4, 1fr)",
       // }}
       >
-        <section style={{ display: "flex", alignItems: "center" }}>
+        {/* <section style={{ display: "flex", alignItems: "center" }}>
           <h6>
             {" "}
             <i
@@ -46,7 +46,7 @@ export default function Home() {
               style={{ color: "#f95192" }}
             ></i>{" "}
             Trending
-          </h6>
+          </h6> */}
           
           {/* <ul style={{ color: "#f95192" }}>#1 MYRO2.0</ul>
           <ul style={{ color: "#f95192" }}>#2 CHARIZARD</ul>
@@ -57,7 +57,7 @@ export default function Home() {
           <ul style={{ color: "#f95192" }}>#7 TIF</ul>
           <ul style={{ color: "#f95192" }}>#8 POPEYE</ul>
           <ul style={{ color: "#f95192" }}>#9 TENC</ul> */}
-        </section>
+        {/* </section> */}
       </div>
       <LaunchPads />{" "}
     </div>
